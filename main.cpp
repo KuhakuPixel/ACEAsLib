@@ -1,6 +1,6 @@
 #include "ACE/proc_stat.hpp"
 #include "CLI11.hpp"
-#include "ACE/engine_client.hpp"
+#include "ACE/attach_client.hpp"
 #include "ACE/engine_server.hpp"
 #include "ACE/input.hpp"
 #include <stdio.h>
@@ -38,7 +38,7 @@ void attach_cmd_handler(int pid) {
 
   );
 
-  engine_client client = engine_client(port);
+  attach_client client = attach_client(port);
   //
   run_input_loop(
       [&](std::string input) -> E_loop_statement {
